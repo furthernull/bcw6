@@ -3,24 +3,24 @@
         private int $maxSymbols;
         private string $content;
 
-        public function _construct(int $maxSymbols = 1024) {
-            $this->maxSymbols = maxSymbols;
-            $this->content = NULL;
+        public function __construct(int $maxSymbols = 1024) {
+            $this->maxSymbols = $maxSymbols;
+            $this->content = "";
         }
 
-        public function _toString() {
+        public function __toString() {
             return 'Paper: (' . strlen($this->content) . '/' . $this->maxSymbols . ')';
         }
 
-        public function _addContent(string $message) {
+        public function addContent(string $message) {
             $availableSymbol = $this->maxSymbols - strlen($this->content);
 
             if ( $availableSymbol == 0 ) {
                 throw new Exception("Out of space");
             }
 
-            if ( strlen($message) > availableSymbol ) {
-                $this->content .= substr($message, 0, availableSymbol);
+            if ( strlen($message) > $availableSymbol ) {
+                $this->content .= substr($message, 0, $availableSymbol);
                 throw new Exception("Out of space");
             }
             $this->content .= $message;
