@@ -27,15 +27,4 @@
             $this->symbols -= strlen($message);
         }
     }
-
-    $pen = new Pen();
-    $paper = new Paper();
-
-    echo $pen . PHP_EOL;
-    echo $paper . PHP_EOL;
-
-    $pen->write($paper, "Hello, world");
-
-    echo $pen . PHP_EOL;
-    echo $paper . PHP_EOL;
 ?>
