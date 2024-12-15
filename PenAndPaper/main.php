@@ -11,9 +11,11 @@
 
     try {
         $pen->write($paper, "Hello, world");
+        $paper->show();
     } catch (Exception $e) {
         $pen->prepare();
         $pen->write($paper, "Hello, world");
+        $paper->show();
     }
     
     echo $pen . PHP_EOL;

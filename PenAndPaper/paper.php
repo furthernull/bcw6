@@ -26,8 +26,8 @@
             $this->content .= $message;
         }
 
-        public function _show() {
-            echo $this->content . PHP.EOL;
+        public function show() {
+            echo $this->content . PHP_EOL;
         }
     }
 ?>
